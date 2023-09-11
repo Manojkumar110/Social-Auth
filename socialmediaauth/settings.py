@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
+    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
     'authApp',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -135,10 +137,29 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
+
+# 198959408560-aps0uvfulad5474dl0gcp9q8vt3iipbh.apps.googleusercontent.com
+
+# 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
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 LOGIN_REDIRECT_URL = "/"
 ACCOUNT_LOGOUT_ON_GET = True
+LOGIN_REDIRECT_URL = '/'
 
 
-
-
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
