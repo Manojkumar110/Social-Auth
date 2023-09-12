@@ -133,7 +133,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = (
-    "django.contrib.auth.backends.ModelBackend",
+    # "django.contrib.auth.backends.ModelBackend",
 
     "allauth.account.auth_backends.AuthenticationBackend",
 )
@@ -189,7 +189,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'short_name'
         ],
         'EXCHANGE_TOKEN': True,
-        # 'LOCALE_FUNC': 'http://127.0.0.1:8000/accounts/github/login/callback/',
+        # 'LOCALE_FUNC': 'http://127.0.0.1:8000/accounts/facebook/login/callback/',
         'VERIFIED_EMAIL': False,
         'VERSION': 'v13.0',
         'GRAPH_API_URL': 'https://graph.facebook.com/v13.0',
