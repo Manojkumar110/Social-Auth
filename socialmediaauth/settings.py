@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
-    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
     'authApp',
 
@@ -138,9 +138,16 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-# 198959408560-aps0uvfulad5474dl0gcp9q8vt3iipbh.apps.googleusercontent.com
 
+# google secret key  start here :-
+# 198959408560-aps0uvfulad5474dl0gcp9q8vt3iipbh.apps.googleusercontent.com
 # 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
+# google secret key end here :-
+
+# facebook :-
+# App Id : 1074912416999256
+# App Secret : 5569ed550e9d80dca8895b340c7b2cae
+# end facebook :-
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
@@ -161,5 +168,28 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {
             'access_type': 'online',
         }
+    },
+
+    'facebook': {
+        'METHOD': 'oauth2',  # Set to 'js_sdk' to use the Facebook connect SDK
+        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': 'http://127.0.0.1:8000/accounts/github/login/callback/',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v13.0',
+        'GRAPH_API_URL': 'https://graph.facebook.com/v13.0',
     }
 }
