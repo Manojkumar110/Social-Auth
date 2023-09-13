@@ -134,7 +134,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = (
-    # "django.contrib.auth.backends.ModelBackend",
+    "django.contrib.auth.backends.ModelBackend",
 
     "allauth.account.auth_backends.AuthenticationBackend",
 )
@@ -153,9 +153,9 @@ SITE_ID = 1
 # end facebook :-
 
 # twitter :
-# API KEY : xe0Dobd9nEK6wfLyIWzSzrnhH
-# API KEY SECRET : a0TpHSmmI5iJEqFXS3lLNUqh8TbYrNII1nvmH3RlOgDZZPfIKb
-# Bearer Token : AAAAAAAAAAAAAAAAAAAAAGq0pwEAAAAAJpc5UYQmhbwk9x%2B%2Fv3L8ghyYSoE%3D5erFeN1smztz6JsOBoVijYwUDpgHGAZ5xjSaU8ok6DOVmaB6Ow
+# API KEY : WBqH2Y37uTKEqEADR6OxeowJP
+# API KEY SECRET : IYRGouGu1knnthYsyggJBzGPKDa8ZdCswzer5e0j43QWaOXCqg
+# Bearer Token : AAAAAAAAAAAAAAAAAAAAAI21pwEAAAAA%2B5iaNOTgvg3ed4VWlS4j1SQn4vI%3DxxCu3M5cn3Ap1LSv2YC8kQVNFUCQRx86BJkqcffZLGas4nX0Wv
 # twitter_dashedboard_link : https://developer.twitter.com/en/portal/projects/1701543458786185216/apps/27767914/keys 
 
 
@@ -206,5 +206,13 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERSION': 'v13.0',
         'GRAPH_API_URL': 'https://graph.facebook.com/v13.0',
     },
-    'twitter':{}
+
+    
+    # 'twitter':{
+    #     'APP' :{
+    #         'client_id' : 'cXlCcXA2Y0F2TmNtVnJFbnBEQWs6MTpjaQ',
+    #         'secret' : 'ldmNy-S2mZspfovHhPrn1428cGzBkpK_CrlBXkhL4O_gAHdpyV',
+    #         'key' : ''
+    #     }
+    # }
 }
