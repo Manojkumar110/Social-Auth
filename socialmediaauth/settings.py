@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter',
     'authApp',
 
 ]
@@ -151,6 +152,17 @@ SITE_ID = 1
 # App Secret : 5569ed550e9d80dca8895b340c7b2cae
 # end facebook :-
 
+# twitter :
+# API KEY : xe0Dobd9nEK6wfLyIWzSzrnhH
+# API KEY SECRET : a0TpHSmmI5iJEqFXS3lLNUqh8TbYrNII1nvmH3RlOgDZZPfIKb
+# Bearer Token : AAAAAAAAAAAAAAAAAAAAAGq0pwEAAAAAJpc5UYQmhbwk9x%2B%2Fv3L8ghyYSoE%3D5erFeN1smztz6JsOBoVijYwUDpgHGAZ5xjSaU8ok6DOVmaB6Ow
+# twitter_dashedboard_link : https://developer.twitter.com/en/portal/projects/1701543458786185216/apps/27767914/keys 
+
+
+# client id : bnpCcVNrMjFBb3NTMXZIMV9SNFE6MTpjaQ
+# client secret : IvlTpcUYbRfuZicDA_CgQ01Ws5kzx2PuQPSym3kd8GWawpbLO9
+
+
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = "email"
@@ -193,5 +205,6 @@ SOCIALACCOUNT_PROVIDERS = {
         'VERIFIED_EMAIL': False,
         'VERSION': 'v13.0',
         'GRAPH_API_URL': 'https://graph.facebook.com/v13.0',
-    }
+    },
+    'twitter':{}
 }
