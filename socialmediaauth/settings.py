@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.twitter',
     'authApp',
 
 ]
@@ -141,28 +140,6 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-
-# google secret key  start here :-
-# 198959408560-aps0uvfulad5474dl0gcp9q8vt3iipbh.apps.googleusercontent.com
-# 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
-# google secret key end here :-
-
-# facebook :-
-# App Id : 1074912416999256
-# App Secret : 5569ed550e9d80dca8895b340c7b2cae
-# end facebook :-
-
-# twitter :
-# API KEY : WBqH2Y37uTKEqEADR6OxeowJP
-# API KEY SECRET : IYRGouGu1knnthYsyggJBzGPKDa8ZdCswzer5e0j43QWaOXCqg
-# Bearer Token : AAAAAAAAAAAAAAAAAAAAAI21pwEAAAAA%2B5iaNOTgvg3ed4VWlS4j1SQn4vI%3DxxCu3M5cn3Ap1LSv2YC8kQVNFUCQRx86BJkqcffZLGas4nX0Wv
-# twitter_dashedboard_link : https://developer.twitter.com/en/portal/projects/1701543458786185216/apps/27767914/keys 
-
-
-# client id : bnpCcVNrMjFBb3NTMXZIMV9SNFE6MTpjaQ
-# client secret : IvlTpcUYbRfuZicDA_CgQ01Ws5kzx2PuQPSym3kd8GWawpbLO9
-
-
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = "email"
@@ -185,7 +162,7 @@ SOCIALACCOUNT_PROVIDERS = {
     },
 
     'facebook': {
-        'METHOD': 'oauth2',  # Set to 'js_sdk' to use the Facebook connect SDK
+        'METHOD': 'oauth2', 
         'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
         'SCOPE': ['email', 'public_profile'],
         'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
@@ -201,18 +178,8 @@ SOCIALACCOUNT_PROVIDERS = {
             'short_name'
         ],
         'EXCHANGE_TOKEN': True,
-        # 'LOCALE_FUNC': 'http://127.0.0.1:8000/accounts/facebook/login/callback/',
         'VERIFIED_EMAIL': False,
         'VERSION': 'v13.0',
         'GRAPH_API_URL': 'https://graph.facebook.com/v13.0',
     },
-
-    
-    # 'twitter':{
-    #     'APP' :{
-    #         'client_id' : 'cXlCcXA2Y0F2TmNtVnJFbnBEQWs6MTpjaQ',
-    #         'secret' : 'ldmNy-S2mZspfovHhPrn1428cGzBkpK_CrlBXkhL4O_gAHdpyV',
-    #         'key' : ''
-    #     }
-    # }
 }
